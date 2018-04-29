@@ -10,7 +10,7 @@ http://localhost:8080/
 
 and respond with a JSON representation of a greeting:
 
-```
+```JSON
 {
     "fullName": "...",
     "description": "...",
@@ -20,7 +20,7 @@ and respond with a JSON representation of a greeting:
 }
 ```
 
-You must customize the greeting with `owner` & `repository-name` parameters in the query string:
+You must customize the request with `owner` & `repository-name` parameters in the query string:
 
 ```
 http://localhost:8080/repositories/{owner}/{repository-name}
