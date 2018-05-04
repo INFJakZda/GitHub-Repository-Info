@@ -8,7 +8,7 @@ It's a service that accepts HTTP GET requests at:
 http://localhost:8080/
 ```
 
-and respond with a JSON representation of a greeting:
+and respond with a JSON representation of the repo info:
 
 ```JSON
 {
