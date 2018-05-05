@@ -1,6 +1,5 @@
 package github;
 
-import org.springframework.http.*;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
@@ -18,11 +17,8 @@ public class DataRetrieve {
     }
 
     public boolean validate() {
-        HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.MULTIPART_FORM_DATA);
-        HttpEntity<?> entity = new HttpEntity<>(headers);
         try {
-            restTemplate.exchange(GitUrl, HttpMethod.GET, entity, String.class);
+            this.model = restTemplate.getForObject( GitUrl, Model.class);
         } catch (HttpClientErrorException ex) {
             return false;
         }
