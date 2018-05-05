@@ -15,11 +15,10 @@ public class Controller {
 
     @RequestMapping(method = RequestMethod.GET)
     public Model getModelInfo(@PathVariable String owner, @PathVariable String repositoryName) {
-        this.validate(owner, repositoryName);
-        return new DataRetrieve(owner, repositoryName).getModel();
-    }
-
-    public void validate(String owner, String repositoryName) {
-        System.out.println(owner + " " + repositoryName);
+        DataRetrieve dataRetrieve = new DataRetrieve(owner, repositoryName);
+        if( !dataRetrieve.validate() ) {
+            throw new NotFoundException(owner, repositoryName);
+        }
+        return dataRetrieve.getModel();
     }
 }
