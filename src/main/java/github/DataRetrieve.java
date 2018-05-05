@@ -8,7 +8,6 @@ public class DataRetrieve {
     private String GitUrl = "https://api.github.com/repos/";
 
     private Model model;
-
     private RestTemplate restTemplate;
 
     DataRetrieve(String owner, String repositoryName) {
